@@ -28,11 +28,11 @@
 </head>
 <body onload="getTitle()">
     <div class="container">
-        <button style="margin-left: 400px;" onclick="window.location='/pdfs.html'">Books</button><br/><br/>
-        <button style="margin-left: 400px;" onclick="window.location='/'">Home</button>
+        <button onclick="window.location='/pdfs.html'">Books</button><br/><br/>
+        <button onclick="window.location='/'">Home</button>
         <h1>Edit Book</h1>
         <!-- Form for updating PDF -->
-        <form id="updateForm" action="update.php" method="post" enctype="multipart/form-data">
+        <form id="updateForm" action="/update.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pdfFile" required>
             <input type="text" id="title" name="title" placeholder="Title" readonly required>
             <input type="text" name="author" placeholder="Author" required>

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdfFile'])) {
     }
 
     if ($result) {
-        header('Location: index.html');
+        header('Location: /');
         exit;
         //echo json_encode(array('status' => 'success'));
     } else {
