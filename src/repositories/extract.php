@@ -2,12 +2,12 @@
 // Check if a PDF file was uploaded
 if ($_FILES['pdf-file']['error'] === UPLOAD_ERR_OK && $_FILES['pdf-file']['type'] === 'application/pdf') {
     // Path where the uploaded PDF file will be saved
-    $uploadPath = 'uploads/' . basename($_FILES['pdf-file']['name']);
+    $uploadPath = '../../storage/' . basename($_FILES['pdf-file']['name']);
 
-    // Move the uploaded PDF file to the uploads directory
+    // Move the uploaded PDF file to the storage directory
     if (move_uploaded_file($_FILES['pdf-file']['tmp_name'], $uploadPath)) {
         // Use pdfparser to extract text from the uploaded PDF file
-        require_once 'vendor/autoload.php'; // Include pdfparser library
+        require_once '../../vendor/autoload.php'; // Include pdfparser library
 
         $parser = new \Smalot\PdfParser\Parser();
         $pdf = $parser->parseFile($uploadPath);

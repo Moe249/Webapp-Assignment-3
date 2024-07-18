@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function fetchPDFs() {
-    fetch('get_pdfs.php')
+    fetch('../repositories/get_pdfs.php')
         .then(response => response.json())
         .then(data => {
             const pdfList = document.getElementById('pdfList');
@@ -16,7 +16,7 @@ function fetchPDFs() {
                 const li = document.createElement('li');
                 li.innerHTML = `
                         <strong>${pdf.title}</strong> by ${pdf.author}
-                        <a href="download.php?id=${pdf.id}" download>Download</a>
+                        <a href="../repositories/download.php?id=${pdf.id}" download>Download</a>
                         <button onclick="deletePDF(${pdf.id})">Delete</button>
                         <button onclick="editPDF(${pdf.id})">Edit</button>
                     `;
@@ -28,7 +28,7 @@ function fetchPDFs() {
 // Function to delete PDF
 function deletePDF(id) {
     if (confirm('Are you sure you want to delete this PDF?')) {
-        fetch(`delete_pdf.php?id=${id}`, { method: 'DELETE' })
+        fetch(`../repositories/delete_pdf.php?id=${id}`, { method: 'DELETE' })
             .then(response => {
                 if (response.ok) {
                     fetchPDFs(); // Refresh PDF list after deletion
@@ -42,7 +42,7 @@ function deletePDF(id) {
 function editPDF(id) {
     window.location.href = 'edit.html';
     var title;
-    fetch('get_pdfs.php')
+    fetch('../repositories/get_pdfs.php')
         .then(response => response.json())
         .then(data => {
             const pdfList = document.getElementById('pdfList');

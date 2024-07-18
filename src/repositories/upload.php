@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdfFile'])) {
     $fileTempName = $_FILES['pdfFile']['tmp_name'];
 
     // Move uploaded file to server directory
-    $uploadDirectory = 'uploads/';
+    $uploadDirectory = '../../storage/';
     $filePath = $uploadDirectory . $fileName;
     move_uploaded_file($fileTempName, $filePath);
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdfFile'])) {
     $result = pg_query_params($dbconn, $query, array($title, $author, $filePath));
 
     if ($result) {
-        header('Location: index.html');
+        header('Location: ../../index.html');
         exit;
         //echo json_encode(array('status' => 'success'));
     } else {
