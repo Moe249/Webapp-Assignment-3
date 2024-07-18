@@ -1,3 +1,5 @@
+<!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
+ <!-- Search for row from database with id then drop from the table -->
 <?php
 // Database connection
 $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")

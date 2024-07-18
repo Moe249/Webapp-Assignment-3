@@ -1,3 +1,5 @@
+<!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
+ <!-- Search for pdf from database with id then retrieve a link to pdf file -->
 <?php
 if (isset($_GET['id'])) {
     // Database connection
