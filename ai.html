@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div style="margin-left: 330px; display: justify;" class="button-container">
+            <button onclick="document.location='index.html'">Home</button>
+            <button onclick="document.location='pdfs.html'">Books</button>
+        </div>
+        <h1>AI Assistant</h1>
+        <h2>An AI tool that helps you summarize your textbooks</h2>
+        <!-- Form for uploading PDF -->
+        <form style="margin-left: 70px" id="upload-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="pdf-file" accept=".pdf">
+            <button type="submit">AI .. Do your magic!</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Summarized Text:</h2>
+            <p1 id="summarized-text"></p1>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById('file-input');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a PDF file.');
+                return;
+            }
+
+            formData.append('pdf-file', file);
+
+            fetch('extract.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    fetch('https://api.openai.com/v1/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer $API_KEY'
+                        },
+                        body: JSON.stringify({
+                            model: 'gpt-3.5-turbo',
+                            messages: [
+                                { role: 'system', content: `please summarize this content:\n${data.text}` }
+                            ],
+                            temperature: 0.5
+                        })
+                    }).
+                        then(response => response.json())
+                        .then(data => {
+                            document.getElementById('summarized-text').textContent = data.choices[0].message.content.trim();
+                            document.getElementById('result').classList.remove('hidden');
+                        }).catch(error => {
+                            console.error('Error:', error);
+                            alert('Error summarizing PDF content.');
+                        });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error extracting text from PDF.');
+                });
+        });
+    </script>
+</body>
+
+</html>

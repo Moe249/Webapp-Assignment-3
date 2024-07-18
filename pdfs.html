@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,23 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <button style="margin-left: 400px;" onclick="document.location='index.html'">Home</button>
+        <div style="margin-left: 310px; display: justify;" class="button-container">
+            <button onclick="document.location='index.html'">Home</button>
+            <button onclick="document.location='ai.html'">AI Assistant</button>
+        </div>
 
         <!-- List of uploaded PDFs -->
         <h2>Available PDFs</h2>
         <ul id="pdfList">
             <!-- PDFs will be listed dynamically here -->
         </ul>
-        
+
     </div>
-    
+
 
 </body>
+
 </html>
