@@ -7,18 +7,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Library</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/views/styling/styles.css">
 </head>
 
 <body>
     <div class="container">
         <div style="margin-left: 310px; display: justify;" class="button-container">
-            <button onclick="document.location='pdfs.html'">Books</button>
-            <button onclick="document.location='ai.html'">AI Assistant</button>
+            <button onclick="document.location='src/views/pdfs.html'">Books</button>
+            <button onclick="document.location='src/views/ai.html'">AI Assistant</button>
         </div>
         <h1>PDF Library</h1>
         <!-- Form for uploading PDF -->
-        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <form id="uploadForm" action="src/repositories/upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pdfFile" required>
             <input type="text" name="title" placeholder="Title" required>
             <input type="text" name="author" placeholder="Author" required>
