@@ -1,5 +1,10 @@
 <!-- Ahmed Emad Al-deen Hassan (software engineering )-->
  <!-- updating an already exsisting PDF-->
+<!--
+@modified 2024-07-18 by Mohamed Alkhatim
+@brief    Applied mvc architecture
+-->
+
 <?php
 // Database connection
 $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")

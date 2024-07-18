@@ -1,5 +1,10 @@
 /* Ahdy Emad-Eldeen Mohammed (Software Engineering) */
- /* Scripts for fetching pdfs from database, deleteing a pdf, editing a pdf */
+/* Scripts for fetching pdfs from database, deleteing a pdf, editing a pdf */
+/*
+@modified 2024-07-18 by Mohamed Alkhatim
+@brief    Applied mvc architecture
+*/
+
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch and display PDFs from server
     fetchPDFs();

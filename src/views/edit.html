@@ -1,36 +1,43 @@
 <!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
- <!-- PDF editing page -->
+<!-- PDF editing page -->
+<!--
+@modified 2024-07-18 by Mohamed Alkhatim
+@brief    Applied mvc architecture
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Book</title>
-    <link href="/src/views/styling/styles.css" rel="stylesheet" type="text/css"/>
-    
+    <link href="/src/views/styling/styles.css" rel="stylesheet" type="text/css" />
+
     <script>
-    function getTitle(){
-        function getQueryParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const params = {};
-            
-            for (const [key, value] of urlParams.entries()) {
-                params[key] = value;
+        function getTitle() {
+            function getQueryParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const params = {};
+
+                for (const [key, value] of urlParams.entries()) {
+                    params[key] = value;
+                }
+
+                return params;
             }
-            
-            return params;
+
+            const queryParams = getQueryParams();
+            document.getElementById("title").value = queryParams["name"];
+
         }
 
-        const queryParams = getQueryParams();
-        document.getElementById("title").value = queryParams["name"];
-        
-    }
-        
     </script>
 </head>
+
 <body onload="getTitle()">
     <div class="container">
-        <button onclick="window.location='/src/views/pdfs.html'">Books</button><br/><br/>
+        <button onclick="window.location='/src/views/pdfs.html'">Books</button><br /><br />
         <button onclick="window.location='/index.html'">Home</button>
         <h1>Edit Book</h1>
         <!-- Form for updating PDF -->
@@ -43,4 +50,5 @@
     </div>
 
 </body>
+
 </html>

@@ -1,3 +1,11 @@
+<!--
+ @author  Mohamed Alkhatim
+ @since   2024-07-16
+ @modified 2024-07-17
+ @file    ai_assistant.html
+ @brief   Summarize pdf content using Generative AI generative pre-trained transformers models
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +66,7 @@
                         body: JSON.stringify({
                             model: 'gpt-3.5-turbo',
                             messages: [
-                                { role: 'system', content: `please summarize this content:\n${data.text}` }
+                                { role: 'system', content: `please summarize this:\n${data.text}` }
                             ],
                             temperature: 0.5
                         })

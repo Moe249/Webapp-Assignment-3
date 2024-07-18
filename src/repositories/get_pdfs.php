@@ -1,5 +1,10 @@
 <!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
  <!-- Retrieve pdfs from database -->
+<!--
+@modified 2024-07-18 by Mohamed Alkhatim
+@brief    Applied mvc architecture
+-->
+
 <?php
 // Database connection
 $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")

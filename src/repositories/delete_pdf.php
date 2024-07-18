@@ -1,5 +1,10 @@
 <!-- Ahmed Emad Al-deen Hassan (software engineering )-->
- <!-- deleting an already exsisting PDF-->
+<!-- deleting an already exsisting PDF-->
+<!--
+@modified 2024-07-18 by Mohamed Alkhatim
+@brief    Applied mvc architecture
+-->
+ 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_GET['id'])) {
     // Database connection
