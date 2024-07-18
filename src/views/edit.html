@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Book</title>
-    <link href="styling/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/src/views/styling/styles.css" rel="stylesheet" type="text/css"/>
     
     <script>
     function getTitle(){
@@ -28,11 +28,11 @@
 </head>
 <body onload="getTitle()">
     <div class="container">
-        <button onclick="window.location='pdfs.html'">Books</button><br/><br/>
-        <button onclick="window.location='../../index.html'">Home</button>
+        <button onclick="window.location='/src/views/pdfs.html'">Books</button><br/><br/>
+        <button onclick="window.location='/index.html'">Home</button>
         <h1>Edit Book</h1>
         <!-- Form for updating PDF -->
-        <form id="updateForm" action="../repositories/update.php" method="post" enctype="multipart/form-data">
+        <form id="updateForm" action="/src/repositories/update.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pdfFile" required>
             <input type="text" id="title" name="title" placeholder="Title" readonly required>
             <input type="text" name="author" placeholder="Author" required>
