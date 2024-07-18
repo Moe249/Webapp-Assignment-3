@@ -1,3 +1,5 @@
+<!-- Ahmed Emad Al-deen Hassan (software engineering )-->
+ <!-- updating an already exsisting PDF-->
 <?php
 // Database connection
 $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")
@@ -32,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdfFile'])) {
     }
 
     if ($result) {
-        header('Location: index.html');
+        header('Location: /');
         exit;
         //echo json_encode(array('status' => 'success'));
     } else {

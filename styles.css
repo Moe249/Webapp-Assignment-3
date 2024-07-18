@@ -1,47 +1,140 @@
+/* Ahmed Emad Al-deen Hassan (software engineering )*/
+ /* The CSS style for website  */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 20px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* Container styles */
 .container {
+    width: 90%;
     max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Heading styles */
 h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2196F3; /* Blue accent color */
+    font-family: 'Roboto', Arial, sans-serif; /* Professional font family */
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 30px;
     text-align: center;
 }
 
-form {
+form input[type="file"], 
+form input[type="text"],
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
     margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #2196F3; /* Blue accent color */
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-input[type="file"] {
-    margin-bottom: 10px;
+form input[type="file"] {
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 
+form input[type="text"]::placeholder {
+    color: #999;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50; /* Green button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    border-color: #388E3C; /* Matching border color */
+    transform: scale(1.05);
+}
+
+/* List styles */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
-    margin-bottom: 10px;
+ul li {
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-button {
+ul li:hover {
+    background-color: #eceff1;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button, a{
+    text-decoration: none;
     padding: 8px 16px;
-    background-color: #007bff;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+button:hover, a:hover{
+    text-decoration: none;
+    background-color: #4CAF50;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    form input[type="file"], 
+    form input[type="text"],
+    form button[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
