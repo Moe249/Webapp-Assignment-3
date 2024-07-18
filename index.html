@@ -2,16 +2,20 @@
  <!-- The main index for the website -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <button onclick="document.location='pdfs.html'">Books</button>
+        <div style="margin-left: 310px; display: justify;" class="button-container">
+            <button onclick="document.location='pdfs.html'">Books</button>
+            <button onclick="document.location='ai.html'">AI Assistant</button>
+        </div>
         <h1>PDF Library</h1>
         <!-- Form for uploading PDF -->
         <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
@@ -23,4 +27,5 @@
     </div>
 
 </body>
+
 </html>
