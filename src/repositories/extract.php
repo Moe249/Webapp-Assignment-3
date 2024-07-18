@@ -1,13 +1,10 @@
-
- <!--
- @author   Mohamed Alkhatim
- @since    2024-07-16
- @modified 2024-07-17
- @file     extract.php
- @brief    Save pdf file, extract its text content, delete it, & and return a json response with the text
- -->
-
 <?php
+// @author   Mohamed Alkhatim
+// @since    2024-07-16
+// @modified 2024-07-17
+// @file     extract.php
+// @brief    Save pdf file, extract its text content, delete it, & and return a json response with the text
+
 // Check if a PDF file was uploaded
 if ($_FILES['pdf-file']['error'] === UPLOAD_ERR_OK && $_FILES['pdf-file']['type'] === 'application/pdf') {
     // Path where the uploaded PDF file will be saved

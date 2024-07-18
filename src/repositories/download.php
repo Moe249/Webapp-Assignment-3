@@ -1,11 +1,9 @@
-<!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
- <!-- Search for pdf from database with id then retrieve a link to pdf file -->
-<!--
-@modified 2024-07-18 by Mohamed Alkhatim
-@brief    Applied mvc architecture
--->
-
 <?php
+// Ahdy Emad-Eldeen Mohammed (Software Engineering)
+// Search for pdf from database with id then retrieve a link to pdf file 
+// @modified 2024-07-18 by Mohamed Alkhatim
+// @brief    Applied mvc architecture
+
 if (isset($_GET['id'])) {
     // Database connection
     $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")

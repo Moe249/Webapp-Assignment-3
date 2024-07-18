@@ -1,11 +1,10 @@
-<!-- Ahdy Emad-Eldeen Mohammed (Software Engineering) -->
- <!-- Search for row from database with id then drop from the table -->
-<!--
-@modified 2024-07-18 by Mohamed Alkhatim
-@brief    Applied mvc architecture
--->
 
 <?php
+// Ahdy Emad-Eldeen Mohammed (Software Engineering)
+// Search for row from database with id then drop from the table
+// @modified 2024-07-18 by Mohamed Alkhatim
+// @brief    Applied mvc architecture
+
 // Database connection
 $dbconn = pg_connect("host=localhost dbname=ass3 user=postgres password=webdev")
     or die('Could not connect: ' . pg_last_error());
